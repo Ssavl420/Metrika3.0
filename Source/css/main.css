@@ -1,0 +1,89 @@
+.main h1 {
+  margin: 0 0 30px 0;
+  max-width: 956px;
+  padding: 3px 0 0 0;
+  font-size: 60px;
+  line-height: 60px;
+}
+@media (max-width: 1199px) {
+  .main h1 {
+    font-size: calc(37px + 23 * ((100vw - 375px) / 1025));
+    max-width: calc(600px + 350 * ((100vw - 375px) / 1025));
+  }
+}
+@media (max-width: 767px) {
+  .main h1 {
+    margin: 0 0 28px 0;
+    max-width: 337px;
+    height: 95px;
+    font-size: 30px;
+    line-height: 32px;
+    text-align: left;
+  }
+}
+.main .main__picture {
+  margin: 0 auto;
+  max-width: 1150px;
+  height: 500px;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), url("../../Img/content/01.png") center/cover no-repeat;
+}
+@media (max-width: 1199px) {
+  .main .main__picture {
+    height: 400px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), url("../../Img/content/01-medium.png") center/cover no-repeat;
+  }
+}
+@media (max-width: 767px) {
+  .main .main__picture {
+    height: 304px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), url("../../Img/content/01-small.png") center/cover no-repeat;
+  }
+}
+.main .main__picture picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.main .main__picture picture img {
+  width: 100%;
+  height: 100%;
+}
+.main .main__picture .main__picture-text {
+  width: 430px;
+  height: 81px;
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  color: white;
+  font-size: 20px;
+  line-height: 27px;
+}
+@media (max-width: 1199px) {
+  .main .main__picture .main__picture-text {
+    position: absolute;
+    bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .main .main__picture .main__picture-text {
+    max-width: 311px;
+    height: 88px;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 355px) {
+  h1 {
+    max-width: 269px;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .main__picture {
+    margin: 0 0 0 0;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope:regular');
+@import "nullindex";
+@import "header";
+@import "main";
+@import "about";
+@import "projects";
+@import "services";
+@import "calc";
+@import "reviews";
+@import "gallery";
+@import "contacts";
+@import "footer";
+@import "popup";
+$maxWidth: 1400;
+$maxWidthContainer: 1150;
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+   $addSize: $startSize - $minSize;
+   @if $type==1 {
+      // Только если меньше контейнера
+      #{$property}: $startSize + px;
+      @media (max-width: #{$maxWidthContainer + px}) {
+         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidthContainer - 375}));
+      }
+   } @else if $type==2 {
+      // Только если больше контейнера
+      #{$property}: $startSize + px;
+      @media (min-width: #{$maxWidthContainer + px}) {
+         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375}));
+      }
+   } @else {
+      // Всегда
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375}));
+   }
+}
+html {
+   scroll-behavior: smooth;
+   body,
+   h1,
+   a,
+   button,
+   .description,
+   .about__text,
+   .services__btn,
+   .services__price
+   .review__title,
+   .review__text,
+   .gallery__title
+   .gallery__text,
+   .contacts__connection,
+   .footer__copyrights {
+      letter-spacing: -0.03em;
+   }
+}
+body {
+   margin: 0 auto;
+   max-width: 100%;
+   font-family: Manrope;
+   font-size: 18px;
+   line-height: 25px;
+   background-color: #fff;
+   &.body-lock {
+      overflow: hidden;
+   }
+}
+.container {
+   margin: 0 auto;
+   max-width: 1180px; //это 1150px с padding
+   padding: 0 15px;
+   @media (max-width:1199px) {
+      margin: 0 auto;
+      padding: 0 15px 0 17px;
+   }
+   @media (max-width:767px) {
+      margin: 0 auto;
+      padding: 0 12px 0 13px;
+   }
+}
+.title {
+   margin: 0 0 30px 0;
+   text-transform: uppercase;
+   color: #121212;
+   @media (max-width:1199px) {
+   }
+   @media (max-width:767px) {
+      margin: 0 0 20px 0;
+      font-size: 14px;
+      line-height: 19px;
+   }
+   :first-child {
+      margin-top: 0;
+   }
+}
+._active {
+   transform: translate(0, 0);
+   opacity: 1;
+}
+main {
+   // overflow: hidden;
+}
+.transition__left-onepx {
+   margin: 0 0 0 1px;
+}
+.transition__left-twopx {
+   margin: 0 0 0 2px;
+}

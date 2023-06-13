@@ -1,0 +1,132 @@
+.contacts {
+  padding: 150px 0;
+}
+.contacts .contacts__inner {
+  max-width: 989px;
+}
+.contacts .contacts__inner .contacts__title {
+  margin: 0 0 74px 0;
+}
+.contacts .contacts__inner .contacts__connection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 117px;
+  font-size: 60px;
+  line-height: 60px;
+}
+.contacts .contacts__inner .contacts__connection .contacts__phone {
+  position: relative;
+  color: #121212;
+  transition: all 0.5s ease;
+}
+.contacts .contacts__inner .contacts__connection .contacts__phone:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+.contacts .contacts__inner .contacts__connection .contacts__phone::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -8px;
+  width: 24px;
+  height: 24px;
+  background: url("../../Img/logo/02.svg") center no-repeat;
+}
+.contacts .contacts__inner .contacts__connection .contacts__email {
+  margin: -10px 0 0 0;
+  position: relative;
+  border-bottom: 2px solid rgba(18, 18, 18, 0.5);
+  color: rgba(18, 18, 18, 0.5);
+  transition: all 0.5s ease;
+}
+.contacts .contacts__inner .contacts__connection .contacts__email:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+.contacts .contacts__inner .contacts__connection .contacts__email::before {
+  content: "";
+  position: absolute;
+  top: -39px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: url("https://cdn-icons-png.flaticon.com/512/3800/3800059.png") center/cover no-repeat;
+}
+
+@media (max-width: 1199px) {
+  .contacts {
+    margin: 0 0 4px 0;
+    padding: 120px 0 80px 0;
+  }
+  .contacts .contacts__inner .contacts__title {
+    margin: 0 0 80px 0;
+  }
+  .contacts .contacts__inner .contacts__connection {
+    font-size: 45px;
+    line-height: 50px;
+    gap: 124px;
+  }
+  .contacts .contacts__inner .contacts__connection .contacts__phone::before {
+    content: "";
+    position: absolute;
+    top: -56px;
+    left: -7px;
+    width: 24px;
+    height: 24px;
+    background: url("../../Img/logo/02.svg") center no-repeat;
+  }
+  .contacts .contacts__inner .contacts__connection .contacts__email {
+    margin: -10px 0 6px 0;
+    border-bottom: 2px solid rgba(18, 18, 18, 0.5);
+  }
+  .contacts .contacts__inner .contacts__connection .contacts__email::before {
+    content: "";
+    position: absolute;
+    top: -45px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url("https://cdn-icons-png.flaticon.com/512/3800/3800059.png") center/cover no-repeat;
+  }
+}
+@media (max-width: 767px) {
+  .contacts {
+    padding: 80px 0;
+  }
+  .contacts .contacts__inner .contacts__title {
+    margin: 0 0 58px 1px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .contacts .contacts__inner .contacts__connection {
+    font-size: 35px;
+    line-height: 46px;
+    gap: 58px;
+  }
+  .contacts .contacts__inner .contacts__connection .contacts__phone {
+    margin: 0 0 0 -1px;
+  }
+  .contacts .contacts__inner .contacts__connection .contacts__phone::before {
+    position: absolute;
+    top: -37px;
+    left: 1px;
+    width: 10px;
+    height: 17px;
+    background: url("../../Img/logo/02.svg") center/cover no-repeat;
+  }
+  .contacts .contacts__inner .contacts__connection .contacts__email {
+    margin: 0 0 0 -1px;
+    color: #121212;
+    border-bottom: none;
+  }
+  .contacts .contacts__inner .contacts__connection .contacts__email a {
+    opacity: 1;
+  }
+  .contacts .contacts__inner .contacts__connection .contacts__email::before {
+    content: "";
+    position: absolute;
+    top: -35px;
+    left: 1px;
+    width: 15px;
+    height: 12px;
+    background: url("https://cdn-icons-png.flaticon.com/512/3800/3800059.png") center/cover no-repeat;
+  }
+}/*# sourceMappingURL=contacts.css.map */
