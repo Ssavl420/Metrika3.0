@@ -182,10 +182,12 @@ if(animItems.length > 0){
 
 const floorSpace = document.querySelector('.floor__space');
 const servicesCost = document.querySelector('.account');
+const costSquareMeterNode = document.querySelector('.cost__squaremeter')
 
 const planningDecisions = document.querySelector('.planning__decisions-selected');
 const drawingOptions = document.querySelector('.drawing__options-selected');
 const visualizationOptions = document.querySelector('.visualization__options-selected');
+const selectTypeBuilding = document.querySelector('.data__place');
 
 const planningDecisionsBtnPlus = document.querySelector('.planning__decisions-plus');
 const planningDecisionsBtnMinus = document.querySelector('.planning__decisions-minus');
@@ -193,29 +195,24 @@ const drawingOptionsBtnPlus = document.querySelector('.drawing__options-plus');
 const drawingOptionsBtnMinus = document.querySelector('.drawing__options-minus');
 const visualizationOptionsBtnPlus = document.querySelector('.visualization__options-plus');
 const visualizationOptionsBtnMinus = document.querySelector('.visualization__options-minus');
+const additionalServicesList = document.querySelector('.addition__services-list');
 
 const MIN_COUNTER_VALUE = 1;
 const MAX_COUNTER_VALUE = 5;
-const COST_SQUARE_METER = 1000;
+const COST_SQUARE_METER_FLAT = 1000;
+const COST_SQUARE_METER_HOME = 2000;
 const CURRENCY = ' ₽';
 
 let counterPlanningDecisions = 1;
 let counterDrawingOptions = 1;
 let counterVisualizationOptions = 1;
 
-// document.querySelector('.data__place').addEventListener('click', function() {
-//   if (document.querySelector('.data__place').selectedIndex = 'квартира') {
-//     COST_SQUARE_METER = 1000;
-//     document.querySelector('.calc__account').innerText = COST_SQUARE_METER;
-//   }
-//   if (document.querySelector('.data__place').selectedIndex = 'дом') {
-//     COST_SQUARE_METER = 1500;
-//     document.querySelector('.calc__account').innerText = COST_SQUARE_METER;
-//   }
-// })
+init();
+
+selectTypeBuilding.addEventListener('change', typeBuilding)
 
 floorSpace.addEventListener('input', CalcProjectCost);
-document.querySelector('.addition__services-list').addEventListener('click', CalcProjectCost);
+additionalServicesList.addEventListener('click', CalcProjectCost);
 
 planningDecisionsBtnPlus.addEventListener('click' , () => addProjectContent(counterPlanningDecisions, planningDecisions));
 planningDecisionsBtnMinus.addEventListener('click', () => removeProjectContent(counterPlanningDecisions, planningDecisions));
@@ -226,8 +223,12 @@ drawingOptionsBtnMinus.addEventListener('click', () => removeProjectContent(coun
 visualizationOptionsBtnPlus.addEventListener('click' , () => addProjectContent(counterVisualizationOptions, visualizationOptions));
 visualizationOptionsBtnMinus.addEventListener('click', () => removeProjectContent(counterVisualizationOptions, visualizationOptions));
 
+function init() {
+  costSquareMeterNode.innerText = COST_SQUARE_METER_FLAT;
+}
+
 function CalcProjectCost() {
-  let cost = floorSpace.valueAsNumber * COST_SQUARE_METER;
+  let cost = floorSpace.valueAsNumber * costSquareMeterNode.innerText;
 
   const checkboxes = document.querySelectorAll('.service__checkbox')
   let checkboxesValue = [];
@@ -252,6 +253,16 @@ function CalcProjectCost() {
 
   servicesCost.innerText = priceFormatted + CURRENCY; 
 };
+
+function typeBuilding(e) {
+  if (e.target.value === 'квартира') {
+    costSquareMeterNode.innerText = COST_SQUARE_METER_FLAT;
+  }
+  if (e.target.value === 'дом') {
+    costSquareMeterNode.innerText = COST_SQUARE_METER_HOME;
+  }
+  CalcProjectCost();
+}
 
 function addProjectContent(counter, output) {
   counter = output.innerText;
